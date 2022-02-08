@@ -1,3 +1,6 @@
+# simple-redux-crud-tutorial
+Simple redux crud app made for the Frontend recruitment task - Proexe company
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
