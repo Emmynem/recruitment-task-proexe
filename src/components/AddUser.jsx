@@ -15,6 +15,10 @@ export function AddUser () {
     const [errorName, setErrorName] = useState(null);
     const [errorEmail, setErrorEmail] = useState(null);
 
+    const validEmail = new RegExp(
+        '^[a-zA-Z0-9._:$!%-]+@[a-zA-Z0-9.-]+.[a-zA-Z]$'
+    );
+
     const handleName = (e) => setName(e.target.value);
     const handleEmail = (e) => setEmail(e.target.value);
 
@@ -28,6 +32,9 @@ export function AddUser () {
         else if (email.length === 0){
             setErrorName(null);
             setErrorEmail("Email is required");
+        }
+        else if (!validEmail.test(email)){
+            setErrorEmail("Invalid email");
         }
         else {
             dispatch(
