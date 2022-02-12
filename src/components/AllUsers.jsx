@@ -22,13 +22,13 @@ export function AllUsers () {
         }
     }
 
-    var delete_id;
+    const [delete_id, setDeleteId] = useState("");
     const [sortUsers, setSortUsers] = useState("ASC");
     const { entities } = useSelector((state) => state.users);
 
     const handleDelete = (id) => {
         openDeleteModal();
-        delete_id = id;
+        setDeleteId(id);
     };
 
     const completeAction = (id) => {
