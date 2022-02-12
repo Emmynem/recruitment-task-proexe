@@ -78,20 +78,20 @@ export function AllUsers () {
                                 </tr>
                             </thead>
                             <tbody>
-                                {entities.map(({id, name, email, username, address}, i) => (
+                                {entities.map((data, i) => (
                                 <tr key={i}>
-                                    <th scope="row">{id}</th>
-                                    <td>{name}</td>
-                                    <td>{username}</td>
-                                    <td>{email}</td>
-                                    <td>{address.city !== undefined ? address.city : "No city"}</td>
+                                    <th scope="row">{data.id}</th>
+                                    <td>{data.name}</td>
+                                    <td>{data.username}</td>
+                                    <td>{data.email}</td>
+                                    <td>{data.address.city !== undefined ? data.address.city : "No city"}</td>
                                     <td>
-                                        <Link to={`/edit-user/${id}`}>
+                                        <Link to={`/edit-user/${data.id}`}>
                                             <button className='btn btn-warning'>Edit</button>
                                         </Link>
                                     </td>
                                     <td>
-                                        <button className='btn btn-danger' onClick={() => handleDelete(id)}>Delete</button>   
+                                        <button className='btn btn-danger' onClick={() => handleDelete(data.id)}>Delete</button>   
                                     </td>
                                 </tr>
                                 ))}                                  
